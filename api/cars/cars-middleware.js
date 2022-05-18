@@ -39,6 +39,7 @@ const checkVinNumberValid = (req, res, next) => {
   if(!isValid){
     return res.status(400).json({message:`vin ${req.body.vin} is invalid`})
   }
+  next()
 }
 
 const checkVinNumberUnique = async(req, res, next) => {

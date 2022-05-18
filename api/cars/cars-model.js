@@ -14,10 +14,12 @@ const getById = (id) => {
   .first()
 }
 
-const create = async(car) => {
+const create = (car) => {
   // DO YOUR MAGIC
-  const id = await db('cars').insert(car)
-  return getById(id)
+  return db('cars').insert(car)
+  .then(id=>{
+    return getById(id)
+  })
 }
 
 module.exports ={
