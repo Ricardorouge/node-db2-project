@@ -7,7 +7,7 @@ const checkCarId = async(req, res, next) => {
   // DO YOUR MAGIC
   try{
     const car = await Cars.getById(req.params.id)
-    !exists?
+    !car?
     res.status(404).json({message:`car with id ${req.params.id} is not found`})
     :
     req.car = car
